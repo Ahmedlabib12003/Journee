@@ -6,7 +6,7 @@
 	<meta name="viewport"
 		content="width=device-width, initial-scale=1.0"> 
 	<title>Online Payment-Page</title> 
-	<link rel="stylesheet" href="paymentform.css"> 
+	<link rel="stylesheet" href="css/paymentform.css"> 
     
 </head> 
 
@@ -176,9 +176,9 @@
     </script>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            document.querySelector('.cancel_btn').addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent form from submitting normally
-                window.location.href = 'travelprogram.html'; // Redirect to travelprogram.html  
+                window.location.href = 'booking.html'; // Redirect to travelprogram.html  
             });
         });
     </script>
