@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6, figure {
 			a {
 				font-size: 16px;
 				padding: 30px 10px;
-				color: rgba(255,255,255,.7);
+				color: rgba(146, 55, 55, 0.915);
 				@include transition(.3s);
 				&:hover,&:focus, &:active {
 					color: rgba(255,255,255,1);
@@ -979,19 +979,19 @@ form {
 		}
 
 		&::-webkit-input-placeholder {
-		   color: $brand-white;
+		color: $brand-white;
 		}
 
 		&:-moz-placeholder { /* Firefox 18- */
-		   color: $brand-white;  
+		color: $brand-white;  
 		}
 
 		&::-moz-placeholder {  /* Firefox 19+ */
-		   color: $brand-white;  
+		color: $brand-white;  
 		}
 
 		&:-ms-input-placeholder {  
-		   color: $brand-white;  
+		color: $brand-white;  
 		}
 		
 
