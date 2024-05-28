@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,47 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
   <link rel="stylesheet" href="css/editprofile.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    
-  <div class="form-container">
-    <h2>Edit Profile</h2>
-    <form id="editProfileForm">
-      <label for="card_background_img">Background Image:</label>
-      <input type="file" id="card_background_img" name="card_background_img" accept="image/*">
-      <div id="background_img_preview" class="image-preview"></div>
+  <div id="page">
+    <script src="js/main.js"></script>
+    <div class="form-container">
+      <h2>Edit Profile</h2>
+      <form id="editProfileForm">
+        <label for="user_name">Name:</label>
+        <input type="text" id="user_name" name="user_name" value="Gordon Ramsay">
 
-      <label for="card_profile_img">Profile Image:</label>
-      <input type="file" id="card_profile_img" name="card_profile_img" accept="image/*">
-      <div id="profile_img_preview" class="image-preview"></div>
+        <label for="number_of_plans">Number of Plans:</label>
+        <input type="number" id="number_of_plans" name="number_of_plans" value="15">
 
-      <label for="user_name">Name:</label>
-      <input type="text" id="user_name" name="user_name" value="Gordon Ramsay">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email address">
+        
+        <label for="password">Change Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+        
 
-      <label for="number_of_plans">Number of Plans:</label>
-      <input type="number" id="number_of_plans" name="number_of_plans" value="15">
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter email address">
-
-      <button type="submit">Save Changes</button>
-      <button type="button" class="cancel-btn">Cancel</button>
-    </form>
-  </div>
+        <button type="submit">Save Changes</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  
 
   <script>
-      document.getElementById('editProfileForm').addEventListener('submit', function(e) {
+    document.getElementById('editProfileForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      const backgroundImgFile = document.getElementById('card_background_img').files[0];
-      const profileImgFile = document.getElementById('card_profile_img').files[0];
+      
       const userName = document.getElementById('user_name').value;
       const numberOfPlans = document.getElementById('number_of_plans').value;
       const email = document.getElementById('email').value;
 
-      // Save the data to local storage (or handle as needed)
-      localStorage.setItem('backgroundImg', backgroundImgFile ? URL.createObjectURL(backgroundImgFile) : '');
-      localStorage.setItem('profileImg', profileImgFile ? URL.createObjectURL(profileImgFile) : '');
+      
       localStorage.setItem('userName', userName);
       localStorage.setItem('numberOfPlans', numberOfPlans);
       localStorage.setItem('email', email);
@@ -57,59 +55,6 @@
       window.location.href = 'userform.html';
     });
 
-    document.getElementById('card_background_img').addEventListener('change', function() {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          document.getElementById('background_img_preview').style.backgroundImage = `url(${event.target.result})`;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-
-    document.getElementById('card_profile_img').addEventListener('change', function() {
-      const file = this.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function(event) {
-          document.getElementById('profile_img_preview').style.backgroundImage = `url(${event.target.result})`;
-        };
-        reader.readAsDataURL(file);
-      }
-    });
   </script>
-  <script>
-    window.onload = function() {
-      const backgroundImg = localStorage.getItem('backgroundImg');
-      const profileImg = localStorage.getItem('profileImg');
-      const userName = localStorage.getItem('userName');
-      const numberOfPlans = localStorage.getItem('numberOfPlans');
-      const email = localStorage.getItem('email');
-  
-      if (backgroundImg) {
-        document.querySelector('.card_background_img').style.backgroundImage = `url(${backgroundImg})`;
-      }
-  
-      if (profileImg) {
-        document.querySelector('.card_profile_img').style.backgroundImage = `url(${profileImg})`;
-      }
-  
-      if (userName) {
-        document.querySelector('.user_details h1').textContent = userName;
-      }
-  
-      if (numberOfPlans) {
-        document.querySelector('.user_details p:nth-of-type(1)').textContent = `Number of plans: ${numberOfPlans}`;
-      }
-  
-      if (email) {
-        document.querySelector('.user_details p:nth-of-type(2)').textContent = `Email: ${email}`;
-      }
-    };
-  </script>
-  
 </body>
 </html>
-
-
