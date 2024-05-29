@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Program</title>
+    <link rel="stylesheet" href="css/travelprogram.css"> 
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h2 class="page-title">Here's your program</h2>
+    <div class="card">
+        <div class="card-content" id="travelProgramContent">
+            <!-- Travel program content will be dynamically inserted here -->
+
+        </div>
+    </div>
+    <button onclick="downloadTravelProgram()">Download Program</button>
+    <script>
+        // Function to fetch travel program data from the API
+        function fetchTravelProgram() {
+            // Replace 'api_endpoint_here' with the actual API endpoint
+            fetch('api_endpoint_here')
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the API response contains HTML content for the travel program
+                // You can adjust this based on the actual structure of the API response
+                document.getElementById('travelProgramContent').innerHTML = data.html_content;
+            })
+            .catch(error => {
+                console.error('Error fetching travel program:', error);
+            });
+        }
+
+        // Function to download the travel program as a file
+        function downloadTravelProgram() {
+            const content = document.getElementById('travelProgramContent').innerHTML;
+            const blob = new Blob([content], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'travel_program.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Call the fetchTravelProgram function when the page loads
+        fetchTravelProgram();
+    </script>
+</body>
+</html>
+
+
+ 

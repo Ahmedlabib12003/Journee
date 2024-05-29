@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User profile</title>
+  <link rel="stylesheet" href="css/userform.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="page">
+    <script src="js/main.js"></script>
+  <div class="card">
+    <div class="card_background_img"></div>
+    <div class="card_profile_img"></div>
+    <div class="user_details">
+      <h1>Gordon Ramsay</h1>
+      <p>Number of plans:15</p>
+      <p>Email:</p>
+      <button class="edit-profile-btn" id="editProfileBtn">Edit Profile</button>
+    </div>
+   <script>
+    document.getElementById("editProfileBtn").addEventListener("click", function() {
+      window.location.href = "editprofile.html";
+    });
+
+// Load and display data from local storage
+window.onload = function() {
+  const backgroundImg = localStorage.getItem('backgroundImg');
+  const profileImg = localStorage.getItem('profileImg');
+  const userName = localStorage.getItem('userName');
+  const numberOfPlans = localStorage.getItem('numberOfPlans');
+  const email = localStorage.getItem('email');
+
+  if (backgroundImg) {
+    document.querySelector('.card_background_img').style.backgroundImage = `url(${backgroundImg})`;
+  }
+
+  if (profileImg) {
+    document.querySelector('.card_profile_img').style.backgroundImage = `url(${profileImg})`;
+  }
+
+  if (userName) {
+    document.querySelector('.user_details h1').textContent = userName;
+  }
+
+  if (numberOfPlans) {
+    document.querySelector('.user_details p:nth-of-type(1)').textContent = `Number of plans: ${numberOfPlans}`;
+  }
+
+  if (email) {
+    document.querySelector('.user_details p:nth-of-type(2)').textContent = `Email: ${email}`;
+  }
+};
+  </script>
+
+</body>
+</html>

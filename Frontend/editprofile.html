@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+  <link rel="stylesheet" href="css/editprofile.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div id="page">
+    <script src="js/main.js"></script>
+    <div class="form-container">
+      <h2>Edit Profile</h2>
+      <form id="editProfileForm">
+        <label for="user_name">Name:</label>
+        <input type="text" id="user_name" name="user_name" value="Gordon Ramsay">
+
+        <label for="number_of_plans">Number of Plans:</label>
+        <input type="number" id="number_of_plans" name="number_of_plans" value="15">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter email address">
+        
+        <label for="password">Change Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+        
+
+        <button type="submit">Save Changes</button>
+        <button type="button" class="cancel-btn">Cancel</button>
+      </form>
+    </div>
+  
+
+  <script>
+    document.getElementById('editProfileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      
+      const userName = document.getElementById('user_name').value;
+      const numberOfPlans = document.getElementById('number_of_plans').value;
+      const email = document.getElementById('email').value;
+
+      
+      localStorage.setItem('userName', userName);
+      localStorage.setItem('numberOfPlans', numberOfPlans);
+      localStorage.setItem('email', email);
+
+      window.location.href = 'userform.html';
+    });
+
+    document.querySelector('.cancel-btn').addEventListener('click', function() {
+      window.location.href = 'userform.html';
+    });
+
+  </script>
+</body>
+</html>
