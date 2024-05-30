@@ -10,14 +10,16 @@
 	text-transform: capitalize; 
 	transition: all 0.2s linear; 
 } 
-
+body{
+	background: #d6eef1;
+	overflow: hidden;
+}
 .container { 
 	display: flex; 
 	justify-content: center; 
 	align-items: center; 
 	min-height: 100vh; 
 	padding: 25px; 
-	background: #d6eef1; 
 } 
 
 .container form { 
