@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Program</title>
+    <link rel="stylesheet" href= {% static 'travel_plan/travelprogram.css'%} />
+    <link rel="stylesheet" href={% static "travel_plan/styles.css" %}/>
+  </head>
+  <body>
+    <h2 class="page-title">Here's your program</h2>
+    <div class="card">
+      <div class="card-content" id="travelProgramContent">
+        <!-- Travel program content will be dynamically inserted here -->
+        {{ test_response.text }}
+      </div>
+    </div>
+    <button onclick="downloadTravelProgram()">Download Program</button>
+    <script>
+      // Function to download the travel program as a file
+      function downloadTravelProgram() {
+        const content = document.getElementById(
+          "travelProgramContent"
+        ).innerHTML;
+        const blob = new Blob([content], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "travel_program.html";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      // Call the fetchTravelProgram function when the page loads
+      fetchTravelProgram();
+    </script>
+  </body>
+</html>
