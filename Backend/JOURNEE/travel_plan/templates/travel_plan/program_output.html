@@ -1,4 +1,5 @@
 {% load static %}
+{% load markdown_extras %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
     <div class="card">
       <div class="card-content" id="travelProgramContent">
         <!-- Travel program content will be dynamically inserted here -->
-        {{ test_response.text }}
+        {{ test_response.text|markdown }}
       </div>
     </div>
     <button onclick="downloadTravelProgram()">Download Program</button>
