@@ -1929,7 +1929,6 @@ html,body{
   width: 100%;
   place-items: center;
   background: #bfd5d8;
-  overflow: hidden;
 }
 ::selection{
   background: #1a75ff;
