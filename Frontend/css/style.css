@@ -2100,6 +2100,50 @@ form .btn input[type="submit"]{
   font-weight: 500;
   cursor: pointer;
 }
+. input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+/* search bar style */
+.navbar-search {
+  display: inline-block;
+  position: relative;
+}
+
+.navbar-search input[type="text"] {
+  padding: 5px 10px;
+  border: 1px solid #efeded;
+  border-radius: 4px;
+  width: 200px;
+  background-color: transparent;
+  color: white;
+}
+
+.navbar-search input[type="text"]::placeholder {
+  color: #faf9f9;
+
+}
+
+/* Button styles of the search bar*/
+button[type="submit"] {
+  background-color: #268b9c; /* Custom background color */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button[type="submit"]:hover {
+  background-color: #1f7180; /* Background color on hover */
+}
+
 
 
 /*# sourceMappingURL=style.css.map */

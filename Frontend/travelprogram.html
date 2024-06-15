@@ -16,6 +16,13 @@
         </div>
     </div>
     <button onclick="downloadTravelProgram()">Download Program</button>
+     <form action=""> 
+    <h2 class="page-title">Are you satisfied?</h2>
+    <button onclick="handleResponse('yes')" id="save">Yes</button>
+    <button onclick="handleResponse('no')" id="refresh">No</button>
+</form>  
+
+      
     <script>
         // Function to fetch travel program data from the API
         function fetchTravelProgram() {

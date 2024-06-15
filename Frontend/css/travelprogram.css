@@ -33,7 +33,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #4ea54e;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -42,3 +42,30 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+/*form of satisfication */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px; /* Adjust as needed */
+}
+form button {
+    margin-top: 10px; /* Adjust spacing between buttons */
+    width: 150px; /* Adjust width as needed */
+}
+/* Additional styles for Yes and No buttons */
+
+.yes-button, .no-button {
+    margin-top: 10px; /* Adjust spacing between buttons */
+    width: 150px; /* Adjust width as needed */
+}
+ button#save {
+        background-color: green;
+        color: white;
+    }
+
+    button#refresh {
+        background-color: red;
+        color: white;
+    }
