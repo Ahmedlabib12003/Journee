@@ -1,0 +1,17 @@
+.container-b{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    background: #567d84;
+    height: 950px;
+    
+}
+.tab-content{
+    width: 500px;
+    padding: 3px 10px 3px 10px;
+    margin-top: 90px !important;
+    background: #095868;
+    border-radius: 10px;
+    
+    
+}

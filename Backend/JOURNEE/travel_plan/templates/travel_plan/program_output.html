@@ -14,7 +14,15 @@
     <div class="card">
       <div class="card-content" id="travelProgramContent">
         <!-- Travel program content will be dynamically inserted here -->
-        {{ test_response.text|markdown }}
+        <h3 style="text-align: center;">Activities</h3>
+        {{activities|markdown}}
+        <hr>
+        <h3 style="text-align: center;">Flight</h3>
+        {{flight|markdown}}
+        <hr>
+        <h3 style="text-align: center;">Accommodation</h3>
+        {{accommodation|markdown}}
+        <hr>
       </div>
     </div>
     <button onclick="downloadTravelProgram()">Download Program</button>

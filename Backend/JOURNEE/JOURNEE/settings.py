@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mo+@z7#@y_4$d=jorwwn2-k%dw9tp_!(_4uwf@61lko3cd)u(n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'JOURNEE.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'core/templates'/ 'users/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,13 +79,9 @@ WSGI_APPLICATION = 'JOURNEE.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'journee',
-        'USER': 'root',
-        'PASSWORD': 'Medo_mysql_2474',
-        'HOST': 'localhost',
-        'PORT': '3306',
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -125,11 +121,26 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
+
+'''
+# Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server
+EMAIL_PORT = 587  # Typically 587 for TLS, 465 for SSL
+EMAIL_USE_TLS = True  # Use TLS
+EMAIL_HOST_USER = 'nourmohsen99999@gmail.com'
+EMAIL_HOST_PASSWORD = 'nooooor99@2002'
+DEFAULT_FROM_EMAIL = 'nourmohsen99999@gmail.com'
+'''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Custom user model
-AUTH_USER_MODEL = 'users.User'
