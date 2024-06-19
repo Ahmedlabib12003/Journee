@@ -64,7 +64,13 @@
                                 <li><a href="{% url 'users:login' %}">Login</a></li>
                                 <li><a href="{% url 'users:register' %}">Sign Up</a></li>
                             {% endif %}  
-                                <li><a href="{% url 'core:contact' %}">Contact</a></li> 
+                                <li><a href="{% url 'core:contact' %}">Contact</a></li>
+                                <li>
+                                    <form class="navbar-search" id="search" >
+                                        <input type="text" placeholder="Search destinations" name="search">
+                                        <button type="submit">Submit</button>
+                                    </form>
+                                </li> 
                         </ul>    
                     </div>
                 </div>
