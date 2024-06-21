@@ -6,12 +6,6 @@
 }
 
 /* Typography */
-h1 {
-  font-size: 18px;
-  font-weight: 500;
-  color: #33363b;
-}
-
 p {
   font-size: 14px;
   color: #868d9b;
@@ -55,6 +49,9 @@ p {
 .user_details h1 {
   margin-top: 10px;
   text-align: center;
+    font-size: 18px;
+  font-weight: 500;
+  color: #33363b;
 }
 
 /* Button styles */
